@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+
+practice_results.csv
+mistakes.csv
+road_sign_app.log
+road_sign_app.err
+
+temp.py
+ab.c
+ab.cpp

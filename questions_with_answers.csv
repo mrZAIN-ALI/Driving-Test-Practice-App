@@ -1,0 +1,101 @@
+question_id,test,questionnaire,question,description,correct_answer,page_number,crop_x0,crop_y0,crop_x1,crop_y1
+road_sign_test1_set1_q1,road_sign_test1.pdf,1,1,The road is closed,2,1,18.0,144.98,594.0,402.82
+road_sign_test1_set1_q2,road_sign_test1.pdf,1,2,No entry for vehicles exceeding height more than 16'-6,3,1,18.0,400.82,594.0,646.44
+road_sign_test1_set1_q3,road_sign_test1.pdf,1,3,Go straight or right,2,2,18.0,91.46,594.0,337.78
+road_sign_test1_set1_q4,road_sign_test1.pdf,1,4,Lane control sign,1,2,18.0,335.78,594.0,601.32
+road_sign_test1_set1_q5,road_sign_test1.pdf,1,5,End of speed limit imposed,3,3,18.0,104.18,594.0,361.78
+road_sign_test1_set1_q6,road_sign_test1.pdf,1,6,Minor cross road joining from left,1,3,18.0,359.78,594.0,593.16
+road_sign_test1_set1_q7,road_sign_test1.pdf,1,7,Narrow bridge,1,4,18.0,142.1,594.0,398.5
+road_sign_test1_set1_q8,road_sign_test1.pdf,1,8,Direction and distance of a place,3,4,18.0,396.5,594.0,657.0
+road_sign_test1_set1_q9,road_sign_test1.pdf,1,9,Give way line,1,5,18.0,66.02,594.0,334.9
+road_sign_test1_set1_q10,road_sign_test1.pdf,1,10,No parking,2,5,18.0,332.9,594.0,589.8
+road_sign_test1_set2_q1,road_sign_test1.pdf,2,1,Motor cycle prohibited,2,6,18.0,104.18,594.0,361.54
+road_sign_test1_set2_q2,road_sign_test1.pdf,2,2,Handcart prohibited,2,6,18.0,359.54,594.0,654.6
+road_sign_test1_set2_q3,road_sign_test1.pdf,2,3,Right turn prohibited,1,7,18.0,66.02,594.0,319.78
+road_sign_test1_set2_q4,road_sign_test1.pdf,2,4,No entry for vehicles exceeding weight more than 7.00 ton,3,7,18.0,317.78,594.0,567.24
+road_sign_test1_set2_q5,road_sign_test1.pdf,2,5,Minor cross road,2,8,18.0,66.02,594.0,307.54
+road_sign_test1_set2_q6,road_sign_test1.pdf,2,6,Airport,2,8,18.0,305.54,594.0,551.4
+road_sign_test1_set2_q7,road_sign_test1.pdf,2,7,Road is clear,1,9,18.0,104.18,594.0,350.5
+road_sign_test1_set2_q8,road_sign_test1.pdf,2,8,Patrol Pump,2,9,18.0,348.5,594.0,624.12
+road_sign_test1_set2_q9,road_sign_test1.pdf,2,9,Lane is closed,2,10,18.0,104.18,594.0,360.58
+road_sign_test1_set2_q10,road_sign_test1.pdf,2,10,Hospital,1,10,18.0,358.58,594.0,621.48
+road_sign_test1_set3_q1,road_sign_test1.pdf,3,1,No parking,2,11,18.0,104.18,594.0,352.9
+road_sign_test1_set3_q2,road_sign_test1.pdf,3,2,Left turn is prohibited,2,11,18.0,350.9,594.0,611.64
+road_sign_test1_set3_q3,road_sign_test1.pdf,3,3,Give way or stop completely,1,12,18.0,66.02,594.0,324.82
+road_sign_test1_set3_q4,road_sign_test1.pdf,3,4,Cyclists,1,12,18.0,322.82,594.0,588.36
+road_sign_test1_set3_q5,road_sign_test1.pdf,3,5,Minor cross road joining from right,1,13,18.0,66.02,594.0,282.58
+road_sign_test1_set3_q6,road_sign_test1.pdf,3,6,Advance danger,1,13,18.0,280.58,594.0,546.12
+road_sign_test1_set3_q7,road_sign_test1.pdf,3,7,Level crossing (with gate),1,14,18.0,66.02,594.0,314.98
+road_sign_test1_set3_q8,road_sign_test1.pdf,3,8,You can overtake if no vehicular traffic is coming from opposite side,2,14,18.0,312.98,594.0,583.56
+road_sign_test1_set3_q9,road_sign_test1.pdf,3,9,Do not stop on road,2,15,18.0,66.02,594.0,322.42
+road_sign_test1_set3_q10,road_sign_test1.pdf,3,10,One way road,1,15,18.0,320.42,594.0,591.0
+road_sign_test1_set4_q1,road_sign_test1.pdf,4,1,Overtaking prohibited for goods vehicle,1,16,18.0,104.18,594.0,340.66
+road_sign_test1_set4_q2,road_sign_test1.pdf,4,2,Keep to the right,1,16,18.0,338.66,594.0,620.64
+road_sign_test1_set4_q3,road_sign_test1.pdf,4,3,Road works,3,17,18.0,66.02,594.0,319.78
+road_sign_test1_set4_q4,road_sign_test1.pdf,4,4,U Turn,1,17,18.0,317.78,594.0,583.32
+road_sign_test1_set4_q5,road_sign_test1.pdf,4,5,Speed reduction hook ahead,1,18,18.0,66.02,594.0,319.78
+road_sign_test1_set4_q6,road_sign_test1.pdf,4,6,Don't stop on road,3,18,18.0,317.78,594.0,578.28
+road_sign_test1_set4_q7,road_sign_test1.pdf,4,7,One way,1,19,18.0,66.02,594.0,322.42
+road_sign_test1_set4_q8,road_sign_test1.pdf,4,8,Double bend to the right,1,19,18.0,320.42,594.0,580.92
+road_sign_test1_set4_q9,road_sign_test1.pdf,4,9,Stop line,2,20,18.0,66.02,594.0,311.14
+road_sign_test1_set4_q10,road_sign_test1.pdf,4,10,Stop,1,20,18.0,309.14,594.0,572.04
+road_sign_test1_set5_q1,road_sign_test1.pdf,5,1,Cycles prohibited,3,21,18.0,104.18,594.0,359.38
+road_sign_test1_set5_q2,road_sign_test1.pdf,5,2,Go straight ahead,3,21,18.0,357.38,594.0,639.36
+road_sign_test1_set5_q3,road_sign_test1.pdf,5,3,Steep ascent,2,22,18.0,104.18,594.0,360.58
+road_sign_test1_set5_q4,road_sign_test1.pdf,5,4,Road is closed ahead,1,22,18.0,358.58,594.0,623.88
+road_sign_test1_set5_q5,road_sign_test1.pdf,5,5,Pedestrians crossings,2,23,18.0,104.18,594.0,355.54
+road_sign_test1_set5_q6,road_sign_test1.pdf,5,6,Right bend,1,23,18.0,353.54,594.0,619.08
+road_sign_test1_set5_q7,road_sign_test1.pdf,5,7,You can drive,2,24,18.0,66.02,594.0,345.94
+road_sign_test1_set5_q8,road_sign_test1.pdf,5,8,Overtaking prohibited,2,24,18.0,343.94,594.0,607.32
+road_sign_test1_set5_q9,road_sign_test1.pdf,5,9,Workshop,3,25,18.0,66.02,594.0,378.84
+road_sign_test1_set5_q10,road_sign_test1.pdf,5,10,Box roundabout,2,25,18.0,422.66,594.0,687.24
+road_sign_test2_set1_q1,road_sign_test2.pdf,1,1,No entry,2,1,18.0,144.98,594.0,390.58
+road_sign_test2_set1_q2,road_sign_test2.pdf,1,2,Road is closed ahead,1,1,18.0,388.58,594.0,654.12
+road_sign_test2_set1_q3,road_sign_test2.pdf,1,3,No entry for vehicles exceeding width more than 8'-6,1,2,18.0,129.62,594.0,368.5
+road_sign_test2_set1_q4,road_sign_test2.pdf,1,4,Slow down,1,2,18.0,366.5,594.0,620.28
+road_sign_test2_set1_q5,road_sign_test2.pdf,1,5,Stop for Police check post,1,3,18.0,104.18,594.0,352.18
+road_sign_test2_set1_q6,road_sign_test2.pdf,1,6,End of all prohibitions imposed,2,3,18.0,350.18,594.0,607.32
+road_sign_test2_set1_q7,road_sign_test2.pdf,1,7,Minor cross road from left,3,4,18.0,65.3,594.0,277.78
+road_sign_test2_set1_q8,road_sign_test2.pdf,1,8,Left side road is closed,1,4,18.0,275.78,594.0,530.28
+road_sign_test2_set1_q9,road_sign_test2.pdf,1,9,Turn right,2,5,18.0,65.3,594.0,312.58
+road_sign_test2_set1_q10,road_sign_test2.pdf,1,10,Box roundabout,2,5,18.0,310.58,594.0,571.56
+road_sign_test2_set2_q1,road_sign_test2.pdf,2,1,Major cross road,1,6,18.0,104.18,594.0,335.62
+road_sign_test2_set2_q2,road_sign_test2.pdf,2,2,Two way traffic,2,6,18.0,333.62,594.0,599.16
+road_sign_test2_set2_q3,road_sign_test2.pdf,2,3,other dangers,1,7,18.0,104.18,594.0,340.66
+road_sign_test2_set2_q4,road_sign_test2.pdf,2,4,Compulsory roundabout,2,7,18.0,338.66,594.0,603.96
+road_sign_test2_set2_q5,road_sign_test2.pdf,2,5,No entry for vehicles,3,8,18.0,142.1,594.0,394.9
+road_sign_test2_set2_q6,road_sign_test2.pdf,2,6,Goods vehicle prohibited,1,8,18.0,392.9,594.0,645.0
+road_sign_test2_set2_q7,road_sign_test2.pdf,2,7,Honking horn prohibited,2,9,18.0,142.1,594.0,398.5
+road_sign_test2_set2_q8,road_sign_test2.pdf,2,8,Speed limit 50 KM,2,9,18.0,396.5,594.0,659.64
+road_sign_test2_set2_q9,road_sign_test2.pdf,2,9,End of prohibition of overtaking,2,10,18.0,142.1,594.0,393.7
+road_sign_test2_set2_q10,road_sign_test2.pdf,2,10,overtaking prohibited,2,10,18.0,391.7,594.0,652.44
+road_sign_test2_set3_q1,road_sign_test2.pdf,3,1,Slippery road,1,11,18.0,104.18,594.0,338.02
+road_sign_test2_set3_q2,road_sign_test2.pdf,3,2,Roundabout,3,11,18.0,336.02,594.0,601.56
+road_sign_test2_set3_q3,road_sign_test2.pdf,3,3,Uneven road,3,12,18.0,66.02,594.0,322.42
+road_sign_test2_set3_q4,road_sign_test2.pdf,3,4,Keep to the left,1,12,18.0,320.42,594.0,601.92
+road_sign_test2_set3_q5,road_sign_test2.pdf,3,5,Dual carriageway end,2,13,18.0,66.02,594.0,327.7
+road_sign_test2_set3_q6,road_sign_test2.pdf,3,6,STOP,1,13,18.0,325.7,594.0,592.44
+road_sign_test2_set3_q7,road_sign_test2.pdf,3,7,Minor cross road from right,1,14,18.0,104.18,594.0,338.02
+road_sign_test2_set3_q8,road_sign_test2.pdf,3,8,Traffic signal roundabout,1,14,18.0,336.02,594.0,599.16
+road_sign_test2_set3_q9,road_sign_test2.pdf,3,9,Restaurant,1,15,18.0,104.18,594.0,365.38
+road_sign_test2_set3_q10,road_sign_test2.pdf,3,10,Lane is closed,2,15,18.0,363.38,594.0,629.88
+road_sign_test2_set4_q1,road_sign_test2.pdf,4,1,Go straight or left,3,16,18.0,104.18,594.0,360.82
+road_sign_test2_set4_q2,road_sign_test2.pdf,4,2,U Turn is prohibited,3,16,18.0,358.82,594.0,624.12
+road_sign_test2_set4_q3,road_sign_test2.pdf,4,3,Turn right,3,17,18.0,66.02,594.0,326.02
+road_sign_test2_set4_q4,road_sign_test2.pdf,4,4,Dangerous descent,2,17,18.0,324.02,594.0,569.88
+road_sign_test2_set4_q5,road_sign_test2.pdf,4,5,Double bend to the left,2,18,18.0,66.02,594.0,329.86
+road_sign_test2_set4_q6,road_sign_test2.pdf,4,6,Road narrows on both sides,1,18,18.0,327.86,594.0,591.0
+road_sign_test2_set4_q7,road_sign_test2.pdf,4,7,Left bend,1,19,18.0,91.46,594.0,347.86
+road_sign_test2_set4_q8,road_sign_test2.pdf,4,8,Parking this way,1,19,18.0,345.86,594.0,606.6
+road_sign_test2_set4_q9,road_sign_test2.pdf,4,9,Overtaking prohibited on central line,2,20,18.0,91.46,594.0,339.22
+road_sign_test2_set4_q10,road_sign_test2.pdf,4,10,Warning sign,2,20,18.0,337.22,594.0,602.76
+road_sign_test2_set5_q1,road_sign_test2.pdf,5,1,Yield to the traffic approaching from the right on any leg of the intersection,2,21,18.0,104.18,594.0,342.1
+road_sign_test2_set5_q2,road_sign_test2.pdf,5,2,Cattle crossing,2,21,18.0,340.1,594.0,595.56
+road_sign_test2_set5_q3,road_sign_test2.pdf,5,3,Pedestrians prohibited,2,22,18.0,66.02,594.0,316.42
+road_sign_test2_set5_q4,road_sign_test2.pdf,5,4,Turn to the left,3,22,18.0,314.42,594.0,597.6
+road_sign_test2_set5_q5,road_sign_test2.pdf,5,5,Children crossing,2,23,18.0,66.02,594.0,309.94
+road_sign_test2_set5_q6,road_sign_test2.pdf,5,6,Falling rock,2,23,18.0,307.94,594.0,546.36
+road_sign_test2_set5_q7,road_sign_test2.pdf,5,7,Road dips,1,24,18.0,66.02,594.0,319.78
+road_sign_test2_set5_q8,road_sign_test2.pdf,5,8,Minor cross roads from right and left respectively,3,24,18.0,317.78,594.0,549.24
+road_sign_test2_set5_q9,road_sign_test2.pdf,5,9,Level crossing (without gate),2,25,18.0,66.02,594.0,290.02
+road_sign_test2_set5_q10,road_sign_test2.pdf,5,10,Slow down to stop,3,25,18.0,288.02,594.0,534.36
