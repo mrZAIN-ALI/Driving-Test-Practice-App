@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#dfe9f7">
   <title>Road Sign Practice</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./firebase-config.js"></script>
@@ -10,12 +11,13 @@
 </head>
 <body>
   <div class="app-shell">
-    <header class="app-header">
+    <header class="app-header glass-panel">
       <div class="brand-row">
         <div class="brand-mark">RS</div>
         <div class="brand-copy">
-          <h1>Road Sign Practice</h1>
-          <p id="bank-count">Loading...</p>
+          <p class="eyebrow">Road Signs</p>
+          <h1>Practice</h1>
+          <p id="bank-count">Loading question bank...</p>
         </div>
       </div>
 
@@ -24,39 +26,46 @@
           <img id="profile-photo" alt="" class="profile-photo" hidden>
           <div class="profile-initials" id="profile-initials">G</div>
           <div class="profile-copy">
-            <div class="profile-name" id="profile-name">Guest profile</div>
+            <div class="profile-name" id="profile-name">Guest mode</div>
             <div class="profile-email" id="profile-email">Progress stays on this device</div>
           </div>
         </div>
-        <button type="button" class="auth-button" id="auth-button">Sign in</button>
-      </section>
-
-      <section class="stats-grid" aria-label="Practice stats">
-        <div class="stat-card">
-          <span>Correct</span>
-          <strong id="stat-correct">0</strong>
-        </div>
-        <div class="stat-card">
-          <span>Wrong</span>
-          <strong id="stat-wrong">0</strong>
-        </div>
-        <div class="stat-card">
-          <span>Accuracy</span>
-          <strong id="stat-accuracy">0%</strong>
-        </div>
+        <button type="button" class="glass-button auth-button" id="auth-button">Sign in</button>
       </section>
     </header>
 
-    <nav class="mode-nav" aria-label="Practice mode">
+    <section class="stats-strip" aria-label="Profile stats">
+      <div class="stat-pill">
+        <span>Correct</span>
+        <strong id="stat-correct">0</strong>
+      </div>
+      <div class="stat-pill">
+        <span>Wrong</span>
+        <strong id="stat-wrong">0</strong>
+      </div>
+      <div class="stat-pill">
+        <span>Accuracy</span>
+        <strong id="stat-accuracy">0%</strong>
+      </div>
+      <div class="stat-pill">
+        <span>Review</span>
+        <strong id="stat-review">0</strong>
+      </div>
+    </section>
+
+    <nav class="mode-nav glass-panel" aria-label="Practice mode">
       <button type="button" data-mode="random" class="active">Random</button>
       <button type="button" data-mode="questionnaire">Sets</button>
       <button type="button" data-mode="mistakes">Mistakes</button>
     </nav>
 
     <main class="main-layout">
-      <aside class="session-panel">
+      <aside class="setup-panel glass-panel">
         <div class="session-title">
-          <span id="mode-label">Random</span>
+          <div>
+            <p class="eyebrow">Mode</p>
+            <h2 id="mode-label">Random</h2>
+          </div>
           <strong id="position-label">0 / 0</strong>
         </div>
 
@@ -71,16 +80,32 @@
           </label>
         </div>
 
-        <button type="button" class="primary-button" id="start-button">Start</button>
-        <p class="session-note" id="status-label"></p>
+        <div class="setup-actions">
+          <button type="button" class="primary-button" id="start-button">Start</button>
+          <button type="button" class="glass-button" id="resume-button" hidden>Resume</button>
+          <button type="button" class="glass-button danger-button" id="save-exit-button" hidden>Save & Exit</button>
+        </div>
+
+        <div class="session-meter" aria-label="Session progress">
+          <div class="meter-row">
+            <span>Session</span>
+            <span id="session-score">0 correct</span>
+          </div>
+          <div class="meter-track">
+            <div id="session-meter-fill"></div>
+          </div>
+        </div>
+
+        <p class="session-note" id="status-label">Select a mode, then start.</p>
       </aside>
 
-      <section class="practice-card" id="question-view">
+      <section class="practice-card glass-panel" id="question-view" hidden>
         <div class="question-top">
           <div>
             <p class="question-kicker" id="question-meta">Question</p>
-            <h2 id="question-title">Loading question</h2>
+            <h2 id="question-title">Question</h2>
           </div>
+          <div class="question-count" id="question-count">1</div>
         </div>
 
         <div class="image-stage">
@@ -90,30 +115,32 @@
         <form class="answer-grid" id="answer-form">
           <label class="answer-option">
             <input type="radio" name="answer" value="1">
-            <span>1</span>
+            <span>Option 1</span>
           </label>
           <label class="answer-option">
             <input type="radio" name="answer" value="2">
-            <span>2</span>
+            <span>Option 2</span>
           </label>
           <label class="answer-option">
             <input type="radio" name="answer" value="3">
-            <span>3</span>
+            <span>Option 3</span>
           </label>
         </form>
 
         <div class="feedback" id="feedback" hidden></div>
 
         <div class="action-bar">
+          <button type="button" id="mobile-save-button" class="glass-button">Save & Exit</button>
           <button type="button" id="submit-button" class="primary-button" disabled>Submit</button>
-          <button type="button" id="next-button" disabled>Next</button>
+          <button type="button" id="next-button" class="glass-button" disabled>Next</button>
         </div>
       </section>
 
-      <section class="empty-state" id="empty-view" hidden>
+      <section class="empty-state glass-panel" id="empty-view">
         <div>
-          <h2 id="empty-title">Ready</h2>
-          <p id="empty-message">Start a practice session.</p>
+          <p class="eyebrow" id="empty-kicker">Ready</p>
+          <h2 id="empty-title">Start a focused practice session</h2>
+          <p id="empty-message">Random, Sets, and Mistakes stay separate so your score is clean.</p>
         </div>
       </section>
     </main>
