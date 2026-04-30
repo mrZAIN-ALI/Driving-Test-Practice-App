@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#dfe9f7">
+  <meta name="theme-color" content="#f3f5ef">
   <title>Road Sign Practice</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./firebase-config.js"></script>
@@ -11,17 +11,22 @@
 </head>
 <body>
   <div class="app-shell">
-    <header class="app-header glass-panel">
-      <div class="brand-row">
+    <header class="top-appbar">
+      <button type="button" class="icon-button menu-button" id="menu-button" aria-label="Open menu" aria-controls="app-drawer" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="brand-lockup">
         <div class="brand-mark">RS</div>
         <div class="brand-copy">
-          <p class="eyebrow">Road Signs</p>
-          <h1>Practice</h1>
-          <p id="bank-count">Loading question bank...</p>
+          <p class="eyebrow">Drive ready</p>
+          <h1>Road Signs</h1>
         </div>
       </div>
 
-      <section class="profile-panel" aria-label="Profile">
+      <section class="account-pill" aria-label="Profile">
         <div class="profile-main">
           <img id="profile-photo" alt="" class="profile-photo" hidden>
           <div class="profile-initials" id="profile-initials">G</div>
@@ -30,119 +35,163 @@
             <div class="profile-email" id="profile-email">Progress stays on this device</div>
           </div>
         </div>
-        <button type="button" class="glass-button auth-button" id="auth-button">Sign in</button>
+        <button type="button" class="ghost-button auth-button" id="auth-button">Sign in</button>
       </section>
     </header>
 
-    <section class="stats-strip" aria-label="Profile stats">
-      <div class="stat-pill">
-        <span>Correct</span>
-        <strong id="stat-correct">0</strong>
-      </div>
-      <div class="stat-pill">
-        <span>Wrong</span>
-        <strong id="stat-wrong">0</strong>
-      </div>
-      <div class="stat-pill">
-        <span>Accuracy</span>
-        <strong id="stat-accuracy">0%</strong>
-      </div>
-      <div class="stat-pill">
-        <span>Review</span>
-        <strong id="stat-review">0</strong>
-      </div>
-    </section>
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
 
-    <nav class="mode-nav glass-panel" aria-label="Practice mode">
-      <button type="button" data-mode="random" class="active">Random</button>
-      <button type="button" data-mode="questionnaire">Sets</button>
-      <button type="button" data-mode="mistakes">Mistakes</button>
-    </nav>
-
-    <main class="main-layout">
-      <aside class="setup-panel glass-panel">
-        <div class="session-title">
-          <div>
-            <p class="eyebrow">Mode</p>
-            <h2 id="mode-label">Random</h2>
-          </div>
-          <strong id="position-label">0 / 0</strong>
-        </div>
-
-        <div id="questionnaire-controls" class="questionnaire-controls" hidden>
-          <label>
-            <span>PDF</span>
-            <select id="test-select"></select>
-          </label>
-          <label>
-            <span>Questionnaire</span>
-            <select id="set-select"></select>
-          </label>
-        </div>
-
-        <div class="setup-actions">
-          <button type="button" class="primary-button" id="start-button">Start</button>
-          <button type="button" class="glass-button" id="resume-button" hidden>Resume</button>
-          <button type="button" class="glass-button danger-button" id="save-exit-button" hidden>Save & Exit</button>
-        </div>
-
-        <div class="session-meter" aria-label="Session progress">
-          <div class="meter-row">
-            <span>Session</span>
-            <span id="session-score">0 correct</span>
-          </div>
-          <div class="meter-track">
-            <div id="session-meter-fill"></div>
-          </div>
-        </div>
-
-        <p class="session-note" id="status-label">Select a mode, then start.</p>
-      </aside>
-
-      <section class="practice-card glass-panel" id="question-view" hidden>
-        <div class="question-top">
-          <div>
-            <p class="question-kicker" id="question-meta">Question</p>
-            <h2 id="question-title">Question</h2>
-          </div>
-          <div class="question-count" id="question-count">1</div>
-        </div>
-
-        <div class="image-stage">
-          <img id="question-image" alt="Road sign question from the PDF">
-        </div>
-
-        <form class="answer-grid" id="answer-form">
-          <label class="answer-option">
-            <input type="radio" name="answer" value="1">
-            <span>Option 1</span>
-          </label>
-          <label class="answer-option">
-            <input type="radio" name="answer" value="2">
-            <span>Option 2</span>
-          </label>
-          <label class="answer-option">
-            <input type="radio" name="answer" value="3">
-            <span>Option 3</span>
-          </label>
-        </form>
-
-        <div class="feedback" id="feedback" hidden></div>
-
-        <div class="action-bar">
-          <button type="button" id="mobile-save-button" class="glass-button">Save & Exit</button>
-          <button type="button" id="submit-button" class="primary-button" disabled>Submit</button>
-          <button type="button" id="next-button" class="glass-button" disabled>Next</button>
-        </div>
-      </section>
-
-      <section class="empty-state glass-panel" id="empty-view">
+    <aside class="app-drawer" id="app-drawer" aria-label="App menu" aria-hidden="false">
+      <div class="drawer-top">
         <div>
-          <p class="eyebrow" id="empty-kicker">Ready</p>
-          <h2 id="empty-title">Start a focused practice session</h2>
-          <p id="empty-message">Random, Sets, and Mistakes stay separate so your score is clean.</p>
+          <p class="eyebrow">Menu</p>
+          <h2>Practice modes</h2>
+        </div>
+        <button type="button" class="icon-button close-menu-button" id="close-menu-button" aria-label="Close menu">x</button>
+      </div>
+
+      <nav class="mode-nav" aria-label="Practice mode">
+        <button type="button" data-mode="random" class="active">
+          <span>Shuffle the full bank</span>
+          <strong>Random practice</strong>
+        </button>
+        <button type="button" data-mode="questionnaire">
+          <span>Choose a PDF set</span>
+          <strong>Questionnaire</strong>
+        </button>
+        <button type="button" data-mode="mistakes">
+          <span>Repair weak spots</span>
+          <strong>Mistakes review</strong>
+        </button>
+      </nav>
+
+      <div class="drawer-card">
+        <p class="eyebrow">Flow</p>
+        <ol>
+          <li>Choose mode</li>
+          <li>Start session</li>
+          <li>Answer signs</li>
+          <li>Save or finish</li>
+        </ol>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <section class="dashboard-panel app-surface">
+        <div class="dashboard-copy">
+          <p class="eyebrow" id="bank-count">Loading question bank...</p>
+          <h2>Practice dashboard</h2>
+          <p>Pick a mode from the menu, start only when you are ready, then review every wrong answer until it is fixed.</p>
+        </div>
+
+        <div class="score-widget" aria-label="Accuracy">
+          <span id="stat-accuracy">0%</span>
+          <small>Accuracy</small>
         </div>
       </section>
+
+      <section class="stats-strip" aria-label="Profile stats">
+        <div class="stat-pill">
+          <span>Correct</span>
+          <strong id="stat-correct">0</strong>
+        </div>
+        <div class="stat-pill">
+          <span>Wrong</span>
+          <strong id="stat-wrong">0</strong>
+        </div>
+        <div class="stat-pill">
+          <span>Review</span>
+          <strong id="stat-review">0</strong>
+        </div>
+      </section>
+
+      <div class="workspace-grid">
+        <section class="setup-panel app-surface">
+          <div class="session-title">
+            <div>
+              <p class="eyebrow">Selected mode</p>
+              <h2 id="mode-label">Random</h2>
+            </div>
+            <strong id="position-label">0 / 0</strong>
+          </div>
+
+          <div id="questionnaire-controls" class="questionnaire-controls" hidden>
+            <label>
+              <span>PDF</span>
+              <select id="test-select"></select>
+            </label>
+            <label>
+              <span>Questionnaire</span>
+              <select id="set-select"></select>
+            </label>
+          </div>
+
+          <div class="session-meter" aria-label="Session progress">
+            <div class="meter-row">
+              <span>Session progress</span>
+              <span id="session-score">0 correct</span>
+            </div>
+            <div class="meter-track">
+              <div id="session-meter-fill"></div>
+            </div>
+          </div>
+
+          <div class="setup-actions">
+            <button type="button" class="primary-button" id="start-button">Start session</button>
+            <button type="button" class="secondary-button" id="resume-button" hidden>Resume saved</button>
+            <button type="button" class="secondary-button danger-button" id="save-exit-button" hidden>Save & Exit</button>
+          </div>
+
+          <p class="session-note" id="status-label">Select a mode, then start.</p>
+        </section>
+
+        <div class="practice-stack">
+          <section class="practice-card app-surface" id="question-view" hidden>
+            <div class="question-top">
+              <div>
+                <p class="question-kicker" id="question-meta">Question</p>
+                <h2 id="question-title">Question</h2>
+              </div>
+              <div class="question-count" id="question-count">1</div>
+            </div>
+
+            <div class="image-stage">
+              <img id="question-image" alt="Road sign question from the PDF">
+            </div>
+
+            <form class="answer-grid" id="answer-form">
+              <label class="answer-option">
+                <input type="radio" name="answer" value="1">
+                <span>Option 1</span>
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="answer" value="2">
+                <span>Option 2</span>
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="answer" value="3">
+                <span>Option 3</span>
+              </label>
+            </form>
+
+            <div class="feedback" id="feedback" hidden></div>
+
+            <div class="action-bar">
+              <button type="button" id="mobile-save-button" class="secondary-button">Save & Exit</button>
+              <button type="button" id="submit-button" class="primary-button" disabled>Submit</button>
+              <button type="button" id="next-button" class="secondary-button" disabled>Next</button>
+            </div>
+          </section>
+
+          <section class="empty-state app-surface" id="empty-view">
+            <div>
+              <p class="eyebrow" id="empty-kicker">Ready</p>
+              <h2 id="empty-title">Start a focused practice session</h2>
+              <p id="empty-message">Random, Questionnaire, and Mistakes each start as a clean session from the menu.</p>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
   </div>
 </body>

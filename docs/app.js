@@ -21,6 +21,10 @@ const app = {
 
 const els = {
   bankCount: document.getElementById("bank-count"),
+  menuButton: document.getElementById("menu-button"),
+  closeMenuButton: document.getElementById("close-menu-button"),
+  drawerBackdrop: document.getElementById("drawer-backdrop"),
+  appDrawer: document.getElementById("app-drawer"),
   profilePhoto: document.getElementById("profile-photo"),
   profileInitials: document.getElementById("profile-initials"),
   profileName: document.getElementById("profile-name"),
@@ -300,6 +304,29 @@ function modeName(mode = app.mode) {
 
 function setStatus(message) {
   els.statusLabel.textContent = message || "";
+}
+
+function isDrawerViewport() {
+  return window.matchMedia("(max-width: 940px)").matches;
+}
+
+function setDrawer(open) {
+  if (!els.appDrawer || !els.menuButton) {
+    return;
+  }
+
+  const mobileDrawer = isDrawerViewport();
+  const shouldOpen = Boolean(open && mobileDrawer);
+  document.body.classList.toggle("drawer-open", shouldOpen);
+  els.menuButton.setAttribute("aria-expanded", String(shouldOpen));
+  els.appDrawer.setAttribute("aria-hidden", String(mobileDrawer && !shouldOpen));
+  if (els.drawerBackdrop) {
+    els.drawerBackdrop.hidden = !shouldOpen;
+  }
+}
+
+function syncDrawerForViewport() {
+  setDrawer(document.body.classList.contains("drawer-open"));
 }
 
 function updateSessionUi() {
@@ -804,6 +831,7 @@ async function init() {
 
 els.modeButtons.forEach((button) => {
   button.addEventListener("click", () => setMode(button.dataset.mode));
+  button.addEventListener("click", () => setDrawer(false));
 });
 
 els.testSelect.addEventListener("change", () => {
@@ -832,6 +860,18 @@ els.answerForm.addEventListener("change", () => {
 });
 els.submitButton.addEventListener("click", submitAnswer);
 els.nextButton.addEventListener("click", nextQuestion);
+els.menuButton?.addEventListener("click", () => {
+  setDrawer(!document.body.classList.contains("drawer-open"));
+});
+els.closeMenuButton?.addEventListener("click", () => setDrawer(false));
+els.drawerBackdrop?.addEventListener("click", () => setDrawer(false));
+window.addEventListener("resize", syncDrawerForViewport);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setDrawer(false);
+  }
+});
+syncDrawerForViewport();
 
 init().catch((error) => {
   showEmpty("Error", "Could not start", error.message);
